@@ -1,20 +1,11 @@
-import React, { useState } from 'react'
-import { MdHowToVote } from "react-icons/md";
 import TransactionComp from '../transactcomp/TransactionComp';
 
-function VoteComp({name, img}: {name: string, img: string} ) {
-
-    const [voteCount, setVoteCount] = useState(0);
-
-    const handleVote = () => {
-        setVoteCount(voteCount + 1);
-    }
+function VoteComp({ name, img }: { name: string, img: string }) {
 
     return (
-        <div className='profilewrap flex flex-col justify-center align-center mt-5'>
-            <h2 className=' text-xl'>{name}</h2>
-            <img src={img} alt={`image of ${name}`} className='profileimage w-48 p-5' />
-            {/* <button className='votepp' onClick={handleVote}><MdHowToVote />Vote - {voteCount}</button> */}
+        <div className=' flex flex-col justify-center items-center bg-blue-500 p-10 rounded-xl'>
+            <h2 className=' text-xl text-white'>{name}</h2>
+            <img src={img} alt={`image of ${name}`} className='w-44 mt-5 mb-5 rounded-lg' />
             <TransactionComp />
         </div>
     )

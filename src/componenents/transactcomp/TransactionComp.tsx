@@ -1,5 +1,6 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { Avatar, Name } from '@coinbase/onchainkit/identity';
+import { MdHowToVote } from "react-icons/md";
 import {
     Transaction,
     TransactionButton,
@@ -15,10 +16,17 @@ import { contracts } from './contracts'
 
 function TransactionComp() {
 
+    const [voteCount, setVoteCount] = useState(0);
+
+    const handleVote = () => {
+        setVoteCount(voteCount + 1);
+    }
+
     const { address } = useAccount();
 
     const handleOnStatus = useCallback((status: LifecycleStatus) => {
         console.log('LifecycleStatus', status);
+        return status.statusData
     }, []);
 
     return address ? (
@@ -27,7 +35,7 @@ function TransactionComp() {
             contracts={contracts}
             onStatus={handleOnStatus}
         >
-            <TransactionButton />
+            <TransactionButton className='bg-blue-900' text='vote' />
             <TransactionSponsor />
             <TransactionStatus>
                 <TransactionStatusLabel />
