@@ -20,10 +20,8 @@ function TransactionComp() {
 
     const handleVote = () => {
         setVoteCount(voteCount + 1);
-        setTimeout(()=>{
-            navigate("/results")
-
-        },3000)
+        alert("Thank you for voting")
+        navigate("/")
     }
 
     const handleOnStatus = useCallback((status: LifecycleStatus) => {
