@@ -35,7 +35,7 @@ function TransactionComp() {
             contracts={contracts}
             onStatus={handleOnStatus}
         >
-            <TransactionButton className='bg-blue-900' text='vote' />
+            <TransactionButton className='bg-blue-900 ' text='vote'  />
             <TransactionSponsor />
             <TransactionStatus>
                 <TransactionStatusLabel />
@@ -43,12 +43,15 @@ function TransactionComp() {
             </TransactionStatus>
         </Transaction>
     ) : (
-        <Wallet>
-            <ConnectWallet>
-                <Avatar className='h-6 w-6' />
-                <Name />
-            </ConnectWallet>
-        </Wallet>
+        ''
+            
+        // <Wallet>
+        //     <ConnectWallet>
+        //         <Avatar className='h-6 w-6' />
+        //         <Name />
+        //     </ConnectWallet>
+        // </Wallet>
+        
     );
 }
 
