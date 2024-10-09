@@ -21,7 +21,7 @@ function Home() {
     setUsrInp(event.target.value)
   }
 
-  const isDissabled = (usrInp.length < 10) || (usrInp.length > 10) || (account.address == undefined);
+  const isDissabled = (usrInp.length < 10) && (usrInp.length > 10) && (account.address == undefined);
 
   const handleAccreditate = () => {   
     if(isDissabled){
@@ -52,7 +52,7 @@ function Home() {
      
       <div className='z-10 text-xl mt-4'>
         <div className='flex justify-center items-center flex-col'>
-          <input type="text" name='pvcnumber' placeholder='Enter your pvc number' className='p-2 mt-2 mb-2 mr-2 border rounded-xl border-blue-500 outline-none text-center' onChange={handleUsrInp} value={usrInp} />
+          <input type="text" name='pvcnumber' placeholder='Enter your testID' className='p-2 mt-2 mb-2 mr-2 border rounded-xl border-blue-500 outline-none text-center' onChange={handleUsrInp} value={usrInp} />
           <p className='text-sm'>ID will be mapped to your address: {account.address}</p>
         </div>
         <button className='m-6 cursor-pointer b-1 border rounded-xl border-blue-500 outline-none' onClick={handleAccreditate} disabled={isDissabled}>Accreditate</button>

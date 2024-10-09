@@ -13,6 +13,9 @@ function Navbar() {
                 <Link to="/explore">Explore</Link>
               </li>
               <li>
+                <Link to="/results">Live data</Link>
+              </li>
+              <li>
                 <Link to="/about">About</Link>
               </li>
               <li>

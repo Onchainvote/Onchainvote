@@ -2,6 +2,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './componenents/homecomp/Home'
 import Explore from './componenents/explorecomp/Explore'
+import About from "./componenents/aboutcomp/About";
+import Results from "./componenents/resultcomp/Results";
 import Navbar from './Navbar'
 import NoPage from './NoPage'
 import './App.css'
@@ -34,6 +36,8 @@ function App({ children }: { children: ReactNode }) {
             <Route path="/" element={<Navbar />}>
               <Route index element={<Home />} />
               <Route path="explore" element={<Explore />} />
+              <Route path="results" element={<Results />} />
+              <Route path="about" element={<About />} />
               <Route path="*" element={<NoPage />} />
             </Route>
           </Routes>
