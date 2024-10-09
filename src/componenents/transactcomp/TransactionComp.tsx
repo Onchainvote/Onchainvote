@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { Avatar, Name } from '@coinbase/onchainkit/identity';
-import { MdHowToVote } from "react-icons/md";
+//import { MdHowToVote } from "react-icons/md";
 import {
     Transaction,
     TransactionButton,
