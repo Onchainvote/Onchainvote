@@ -45,7 +45,8 @@ function Home() {
       {/* hero section */}
     <div className='relative flex flex-col items-center justify-center w-full min-h-screen px-3 overflow-hidden bg-background'>
     <div className="text-center">
-    <h1 className='-mt-30 pt-26 text-5xl font-bold text-black md:text-8xl ml-6'>Welcome to{" "} <span  className="text-blue-600">OnchainVote</span></h1> 
+    <h1 className='-mt-30 pt-26 text-5xl font-bold text-black md:text-8xl ml-6'>Welcome to{" "}</h1>
+    <h1 className="text-blue-600 text-5xl font-bold md:text-8xl">DeVote</h1> 
 
     <p className="mt-4 text-lg text-slate-700 md:text-xl">A voting system built on BASE to promote a more secure and transparent way of voting.</p>
     </div>

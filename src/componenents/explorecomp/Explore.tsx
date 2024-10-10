@@ -5,6 +5,8 @@ import { useAccount } from 'wagmi'
 
 import obi from '../../assets/contestants/Peter_Obi.png'
 import bola from '../../assets/contestants/Tinubu.jpg'
+import buhari from '../../assets/contestants/buhari.png'
+import salbaba from '../../assets/contestants/salbaba.png'
 import sanwo from '../../assets/contestants/Sanwo-Olu.jpg'
 import datti from '../../assets/contestants/Datti-Baba.jpg'
 
@@ -27,8 +29,8 @@ function Explore() {
         <div className='flex justify-evenly flex-wrap mt-5 md:gap-5'>
           <VoteComp name='Peter Obi' img={obi} party='LP'/>
           <VoteComp name='Bola Tinubu' img={bola} party='APC' />
-          <VoteComp name='Peter Obi' img={obi} party='LP'/>
-          <VoteComp name='Bola Tinubu' img={bola} party='APC'/>
+          <VoteComp name='Peter Obi' img={buhari} party='LP'/>
+          <VoteComp name='Bola Tinubu' img={salbaba} party='APC'/>
         </div> 
       </div>
       <div className='grid mt-20'>
