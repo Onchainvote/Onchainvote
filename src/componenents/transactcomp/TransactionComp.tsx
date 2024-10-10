@@ -21,7 +21,7 @@ function TransactionComp() {
     const handleVote = () => {
         setVoteCount(voteCount + 1);
         alert("Thank you for voting")
-        navigate("/results")
+        navigate("/")
     }
 
     const handleOnStatus = useCallback((status: LifecycleStatus) => {

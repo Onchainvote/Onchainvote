@@ -8,6 +8,7 @@ import bola from '../../assets/contestants/Tinubu.jpg'
 import sanwo from '../../assets/contestants/Sanwo-Olu.jpg'
 import datti from '../../assets/contestants/Datti-Baba.jpg'
 
+
 function Explore() {
 
   const navigate = useNavigate()
@@ -21,7 +22,10 @@ function Explore() {
   
 
   return (
+    <>
+    
     <div className='mt-20'>
+     
       <div>
         <h1>Presidential Election</h1>
         <div className='flex justify-evenly flex-wrap mt-5 md:gap-5'>
@@ -54,7 +58,9 @@ function Explore() {
           <VoteComp name='Sanwo-Olu' img={sanwo} party='APC'/>
         </div>
       </div>
+     
     </div>
+    </>
   )
 }
 
