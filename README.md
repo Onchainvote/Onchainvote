@@ -24,4 +24,4 @@
   ```
 
 #### Resource
-[Onchainkit](https://onchainkit.xyz)
+Onchainkit: [Onchainkit](https://onchainkit.xyz)
