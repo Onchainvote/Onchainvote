@@ -1,10 +1,9 @@
 import TransactionComp from '../transactcomp/TransactionComp';
-import { useAccount } from 'wagmi'
+
 
 function VoteComp({ name, img, party }: { name: string, img: string ,party: string }) {
 
-    const account = useAccount();
-
+   
     return (
         // <div className=' flex flex-col justify-center items-center bg-blue-500 p-10 rounded-xl'>
         //     <h2 className=' text-xl text-white'>{name}</h2>

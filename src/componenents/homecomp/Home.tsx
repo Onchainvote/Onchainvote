@@ -43,7 +43,7 @@ function Home() {
   return (
     <div className=''>
       {/* hero section */}
-    <div className='relative flex flex-col items-center justify-center w-full min-h-screen px-3 overflow-hidden bg-background'>
+    <div className='relative flex flex-col items-center justify-center w-full min-h-screen px-3 overflow-hidden bg-background mt-20'>
     <div className="text-center">
     <h1 className='-mt-30 pt-26 text-5xl font-bold text-black md:text-8xl ml-6'>Welcome to{" "}</h1>
     <h1 className="text-blue-600 text-5xl font-bold md:text-8xl">DeVote</h1> 
