@@ -4,6 +4,7 @@ import { useAccount } from 'wagmi'
 import baselogo from '../../assets/baselogo.png'
 import RetroGrid from '../ui/retro-grid';
 
+
 interface MyObject{
   [key: string]: string,
 }
@@ -61,10 +62,10 @@ function Home() {
       </div>
       
       <div>
-        <img src={baselogo} alt="baselogo" className='w-48 absolute top-20 left-0' />
-        <img src={baselogo} alt="baselogo" className='w-48 absolute top-20 right-5 ' />
-        <img src={baselogo} alt="baselogo" className='w-48 absolute bottom-12 right-5 ' />
-        <img src={baselogo} alt="baselogo" className='w-48 absolute bottom-12 left-0 ' />
+        <img src={baselogo} alt="baselogo" className='w-20 absolute top-20 left-0' />
+        <img src={baselogo} alt="baselogo" className='w-20 absolute top-20 right-5 ' />
+        <img src={baselogo} alt="baselogo" className='w-20 absolute bottom-12 right-5 ' />
+        <img src={baselogo} alt="baselogo" className='w-20 absolute bottom-12 left-0 ' />
       </div>
 
       <RetroGrid />
