@@ -4,6 +4,7 @@ import Home from './componenents/homecomp/Home'
 import Explore from './componenents/explorecomp/Explore'
 import About from "./componenents/aboutcomp/About";
 import Results from "./componenents/resultcomp/Results";
+import Dashboard from "./componenents/dashboardcomp/Dashboard"
 import Navbar from './Navbar'
 import NoPage from './NoPage'
 import './App.css'
@@ -37,6 +38,7 @@ function App({ children }: { children: ReactNode }) {
               <Route index element={<Home />} />
               <Route path="explore" element={<Explore />} />
               <Route path="results" element={<Results />} />
+              <Route path="dashboard" element={<Dashboard />} />
               <Route path="about" element={<About />} />
               <Route path="*" element={<NoPage />} />
             </Route>

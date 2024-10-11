@@ -9,21 +9,15 @@ import {
 } from '@coinbase/onchainkit/transaction';
 import type { LifecycleStatus } from '@coinbase/onchainkit/transaction';
 import { useAccount } from 'wagmi'
-import { contracts } from './contracts'
+import { contracts } from './eventcontract'
 import { useNavigate } from "react-router-dom";
 
 
-function TransactionComp() {
+function EventTransact() {
 
     const [voteCount, setVoteCount] = useState(0);
     const navigate = useNavigate()
     const { address } = useAccount();
-
-    const handleVote = () => {
-        setVoteCount(voteCount + 1);
-        alert("Thank you for voting")
-        navigate("/")
-    }
 
     const handleOnStatus = useCallback((status: LifecycleStatus) => {
         console.log('LifecycleStatus', status);
@@ -35,9 +29,8 @@ function TransactionComp() {
             chainId={84532}
             contracts={contracts}
             onStatus={handleOnStatus}
-            onSuccess={handleVote}
         >
-            <TransactionButton className='bg-blue-900 ' text='vote'  />
+            <TransactionButton className='bg-blue-900 ' text='create'  />
             <TransactionSponsor />
             <TransactionStatus>
                 <TransactionStatusLabel />
@@ -57,4 +50,4 @@ function TransactionComp() {
     );
 }
 
-export default TransactionComp
+export default EventTransact

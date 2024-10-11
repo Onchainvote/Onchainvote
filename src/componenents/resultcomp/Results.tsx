@@ -4,18 +4,22 @@ import { useAccount } from 'wagmi'
 import abi from '../../abi/abi.json';
 import ca from '../../abi/ca';
 import Web3 from 'web3';
-import { useEffect, useState } from 'react';
+import { JSXElementConstructor, ReactElement, ReactNode, ReactPortal, useEffect, useState } from 'react';
+
+
 export default function Results() {
+
   const account = useAccount();
   const [elem, setElem] = useState(null);
   const web3= new Web3("https://sepolia.base.org");
+
   const fetchUserVote= async ()=>{
     const contract= await new web3.eth.Contract(abi, ca);
     try{
       await contract.methods.showAddressVoteFunc().call().then(
         (res)=>{
             const returnElem = res.map(
-              (data)=>(
+              (data: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined)=>(
                 <div>{data} voted</div>
               )
             );

@@ -3,16 +3,19 @@ import VoteComp from '../votecomp/VoteComp'
 import { useNavigate } from "react-router-dom";
 import { useAccount } from 'wagmi'
 
+//presidents
 import obi from '../../assets/contestants/Peter_Obi.png'
 import bola from '../../assets/contestants/Tinubu.jpg'
 import buhari from '../../assets/contestants/buhari.png'
 import salbaba from '../../assets/contestants/salbaba.png'
 
+//governors
 import sanwo from '../../assets/contestants/Sanwo-Olu.jpg'
 import datti from '../../assets/contestants/Datti-Baba.jpg'
 import sagamu from '../../assets/contestants/sagamu.jpg'
 import bassey from '../../assets/contestants/BasseyOtu.jpg'
 
+//house of reps
 import tajudeen from '../../assets/contestants/Tajudeen.jpeg'
 import femi from '../../assets/contestants/Femi.jpg'
 import tambuwal from '../../assets/contestants/tambuwal.jpg'

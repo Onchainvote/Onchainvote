@@ -14,10 +14,13 @@ function Navbar() {
                 <Link to="/">Accreditation</Link>
               </li>
               <li>
-                <Link to="/explore">Explore</Link>
+                <Link to="/explore">Ongoing</Link>
               </li>
               <li>
                 <Link to="/results">Live data</Link>
+              </li>
+              <li>
+                <Link to="/dashboard">Dashboard</Link>
               </li>
               <li>
                 <Link to="/about">About</Link>
