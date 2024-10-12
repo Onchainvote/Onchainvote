@@ -2,7 +2,7 @@ import { FaTwitter, FaFacebookF, FaInstagram } from "react-icons/fa"; // Social 
 
 const Footer = () => {
   return (
-    <footer className="grid w-full py-8 text-white bg-blue-300 px-10">
+    <footer className="grid w-full py-8 text-white bg-blue-300 px-16 ">
       <div className="container grid justify-center grid-cols-1 gap-8 mx-auto md:grid-cols-3">
         {/* Column 1: Website Name and Copyright */}
         <div className="text-center md:text-left">
@@ -22,17 +22,17 @@ const Footer = () => {
             </li>
             <li className="mb-2">
               <a href="#" className="transition duration-300 hover:text-blue-400">
-                Events
+                Explore
               </a>
             </li>
             <li className="mb-2">
               <a href="#" className="transition duration-300 hover:text-blue-400">
-                Profile
+                Live Data
               </a>
             </li>
             <li className="mb-2">
               <a href="#" className="transition duration-300 hover:text-blue-400">
-                Contact Us
+                About
               </a>
             </li>
           </ul>

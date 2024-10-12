@@ -22,25 +22,29 @@ export const presidential = [
         id: 1,
         name: "Peter Obi",
         party: "LP",
-        img:  obi
+        img:  obi,
+        vote: 23
     },
     {
         id: 2,
         name: "Bola Tinubu",
         party: "APC",
-        img: bola
+        img: bola,
+        vote: 43
     },
     {
         id: 3,
         name: "Muhammad Buhari",
         party: "APC",
-        img: buhari
+        img: buhari,
+        vote: 34
     },
     {
         id: 4,
         name: "Salbaba",
         party: "PDP",
-        img: salbaba
+        img: salbaba,
+        vote: 45
     },
    
 ]
