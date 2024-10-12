@@ -113,7 +113,7 @@ function Home() {
       </div>
 
       {/* ongoing election */}
-      <div className="container p-4 mx-auto my-16">
+      <div className="container p-4 mx-auto my-16 ">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-bold">Ongoing Election</h2>
           <Link to="/explore" className="text-blue-600 hover:underline">

@@ -49,7 +49,7 @@ function Explore() {
         <h1>
           House of Reps Election
         </h1>
-        <div className='flex justify-evenly align-center flex-wrap mt-5 md:gap-5'>
+        <div className='flex justify-evenly mt-5 md:gap-5'>
           <VoteComp name={houseReps[0].name} img={houseReps[0].img} party={houseReps[0].party}/>
           <VoteComp name={houseReps[1].name} img={houseReps[1].img} party={houseReps[1].party}/>
           <VoteComp name={houseReps[2].name} img={houseReps[2].img} party={houseReps[2].party}/>
