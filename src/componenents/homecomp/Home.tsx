@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAccount } from 'wagmi'
 import baselogo from '../../assets/baselogo.png'
 import RetroGrid from '../ui/retro-grid';
@@ -70,7 +70,22 @@ function Home() {
 
       <RetroGrid />
     </div>
-   
+
+    {/* ongoing election */}
+    <div className="container p-4 mx-auto my-16">
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-2xl font-bold">Ongoing Election</h2>
+          <Link
+            to="/explore"
+            className="text-blue-600 hover:underline"
+          >
+            See All
+          </Link>
+        </div>
+
+        {/* Event List (limited to 3) */}
+       
+      </div>
     </div>
   )
 }
