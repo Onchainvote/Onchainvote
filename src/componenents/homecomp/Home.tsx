@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAccount } from "wagmi";
 import baselogo from "../../assets/baselogo.png";
 import RetroGrid from "../ui/retro-grid";
+import Footer from "../../Layout/Footer";
 
 import { presidential } from "../../data";
 import VoteCandi from "../votecomp/VoteCandi";
@@ -133,6 +134,8 @@ function Home() {
           <VoteCandi name={presidential[3].name} img={presidential[3].img} party={presidential[3].party} votes={presidential[3].vote}/>
         </div> 
       </div>
+
+      <Footer />
     </div>
   );
 }

@@ -26,7 +26,7 @@ function Dashboard() {
             <div>
                 {
                     account.status === 'connected' ? (
-                        <div className='flex justify-center items-center flex-col shadow-2xl rounded-md p-4 mt-10'>
+                        <div className='flex justify-center items-center flex-col shadow-2xl rounded-md p-4 mt-28'>
                             <Avatar className='h-24 w-24' address={account.address} />
                             <p className='text-lg font-bold'>
                                 {account.address}

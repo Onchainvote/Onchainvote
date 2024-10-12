@@ -1,8 +1,13 @@
 import { FaTwitter, FaFacebookF, FaInstagram } from "react-icons/fa"; // Social Media Icons
+import { Link } from "react-router-dom";
+import { useAccount } from 'wagmi'
+
 
 const Footer = () => {
+  
+  const { address } = useAccount();
   return (
-    <footer className="grid w-full py-8 text-white bg-blue-300 px-16 ">
+    <footer className="grid w-full py-8 text-black bg-blue-300 px-16 ">
       <div className="container grid justify-center grid-cols-1 gap-8 mx-auto md:grid-cols-3">
         {/* Column 1: Website Name and Copyright */}
         <div className="text-center md:text-left">
@@ -15,26 +20,25 @@ const Footer = () => {
         <div className="text-center lg:text-left">
           <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
           <ul>
-            <li className="mb-2">
-              <a href="#" className="transition duration-300 hover:text-blue-400">
-                Home
-              </a>
-            </li>
-            <li className="mb-2">
-              <a href="#" className="transition duration-300 hover:text-blue-400">
-                Explore
-              </a>
-            </li>
-            <li className="mb-2">
-              <a href="#" className="transition duration-300 hover:text-blue-400">
-                Live Data
-              </a>
-            </li>
-            <li className="mb-2">
-              <a href="#" className="transition duration-300 hover:text-blue-400">
-                About
-              </a>
-            </li>
+          <li>
+            <Link to="/">Accreditation</Link>
+          </li>
+          <li>
+            <Link to="/explore">Explore</Link>
+          </li>
+          <li>
+            <Link to="/results">Live data</Link>
+          </li>
+          {
+            address != null ? (
+              <li>
+                <Link to="/dashboard">Dashboard</Link>
+              </li>
+            ) : null
+          }
+          <li>
+            <Link to="/about">About</Link>
+          </li>
           </ul>
         </div>
 

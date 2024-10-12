@@ -37,7 +37,7 @@ function TransactionComp() {
             onStatus={handleOnStatus}
             onSuccess={handleVote}
         >
-            <TransactionButton className='bg-blue-900 ' text='vote'  />
+            <TransactionButton className='bg-blue-600 ' text='vote'  />
             <TransactionSponsor />
             <TransactionStatus>
                 <TransactionStatusLabel />

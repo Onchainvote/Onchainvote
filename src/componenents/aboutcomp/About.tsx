@@ -9,14 +9,16 @@ function About() {
   return (
     <>
       <div>
-        <h1 className='font-bold mt-20'>DeVote</h1>
-        A voting platform that has the potential to create transparency in the voting industry, leveraging the base block, DeVote allows users to vote for their choice candidates by signing a contract that stores their vote onchain and can fetched at any time promoting transparency, since the voting data is stored onchain their vote is secured thanks to the dev team and the base blockchain. Users can now enjoy free and fair elections.
+        <h1 className='font-bold mt-28'>DeVote</h1>
+        <p className='text-xl'>
+          A voting platform that has the potential to create transparency in the voting industry, leveraging the base block, DeVote allows users to vote for their choice candidates by signing a contract that stores their vote onchain and can fetched at any time promoting transparency, since the voting data is stored onchain their vote is secured thanks to the dev team and the base blockchain. Users can now enjoy free and fair elections.
+        </p>
       </div>
       <div>
-        <h1 className='font-bold mt-5'>The Team</h1>
+        <h1 className='font-bold mt-10'>The Team</h1>
         <div className='flex justify-between items-center gap-5 wrap mt-5'>
           <div className='flex justify-center items-center flex-col'>
-            <img src={skyful} alt="skyfulimage" className='w-24 rounded-full'/>
+            <img src={skyful} alt="skyfulimage" className='w-24 rounded-full' />
             <p className='font-bold'>iamskyful.base.eth</p>
             <p>Product Manager</p>
           </div>

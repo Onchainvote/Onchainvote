@@ -10,13 +10,11 @@ import {
 import type { LifecycleStatus } from '@coinbase/onchainkit/transaction';
 import { useAccount } from 'wagmi'
 import { contracts } from './eventcontract'
-import { useNavigate } from "react-router-dom";
 import { useAppContext } from '../../../AppProvider';
 
 
 function EventTransact() {
 
-    const navigate = useNavigate()
     const { address } = useAccount();
     const { handleSubmit } = useAppContext();
 
