@@ -6,7 +6,7 @@ const wagmiConfig = createConfig({
     chains: [baseSepolia],
     connectors: [
       coinbaseWallet({
-        appName: 'onchainvote',
+        appName: 'DeVote',
       }),
     ],
     ssr: true,
