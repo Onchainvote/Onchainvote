@@ -26,11 +26,6 @@ function VoteCandi({ name, img, party, votes }: { name: string, img: string ,par
             <div className="p-4 mb-2 text-xl font-bold">
                     <h3>{votes} votes</h3>
             </div>
-               
-          
-        
-
-
 
             
         </div>

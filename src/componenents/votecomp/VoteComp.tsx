@@ -21,7 +21,6 @@ function VoteComp({ name, img, party }: { name: string, img: string ,party: stri
                 
             </div>
            
-
          {/* Candidate's Name */}
             <div className='p-4'>
                  <h2 className="mb-2 text-xl font-bold">{name}</h2>
@@ -29,14 +28,7 @@ function VoteComp({ name, img, party }: { name: string, img: string ,party: stri
             </div>
             <div className="flex w-full items-center justify-between">
         
-                <TransactionComp />
-          
-        
             </div>
-
-
-
-            
         </div>
     )
 }
