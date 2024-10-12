@@ -4,50 +4,34 @@ import Home from './componenents/homecomp/Home'
 import Explore from './componenents/explorecomp/Explore'
 import About from "./componenents/aboutcomp/About";
 import Results from "./componenents/resultcomp/Results";
-import Dashboard from "./componenents/dashboardcomp/Dashboard"
-import Navbar from './Navbar'
+import Dashboard from "./componenents/dashboardcomp/Dashboard";
+import Navbar from './Layout/Navbar'
 import NoPage from './NoPage'
 import './App.css'
 import { ReactNode } from 'react';
-import { WagmiProvider, createConfig, http } from 'wagmi';
-import { baseSepolia } from 'wagmi/chains';
-import { coinbaseWallet } from 'wagmi/connectors';
+import { WagmiProvider } from 'wagmi'
+import wagmiConfig from "./config/wagmiConfig";
+
 import '@coinbase/onchainkit/styles.css';
-import AppProvider from '../AppProvider'
 
-const wagmiConfig = createConfig({
-  chains: [baseSepolia],
-  connectors: [
-    coinbaseWallet({
-      appName: 'onchainvote',
-    }),
-  ],
-  ssr: true,
-  transports: {
-    [baseSepolia.id]: http(),
-  },
-});
-
-function App({ children }: { children: ReactNode }) {
+function App() {
 
   return (
     <>
-      <AppProvider>
-        <WagmiProvider config={wagmiConfig}>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Navbar />}>
-                <Route index element={<Home />} />
-                <Route path="explore" element={<Explore />} />
-                <Route path="results" element={<Results />} />
-                <Route path="dashboard" element={<Dashboard />} />
-                <Route path="about" element={<About />} />
-                <Route path="*" element={<NoPage />} />
-              </Route>
-            </Routes>
-          </BrowserRouter>
-        </WagmiProvider>
-      </AppProvider>
+      <WagmiProvider config={wagmiConfig}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Navbar />}>
+              <Route index element={<Home />} />
+              <Route path="explore" element={<Explore />} />
+              <Route path="results" element={<Results />} />
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="about" element={<About />} />
+              <Route path="*" element={<NoPage />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </WagmiProvider>
     </>
   )
 }
