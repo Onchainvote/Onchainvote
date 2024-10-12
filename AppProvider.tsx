@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, ReactNode,  FormEvent } from 'react';
+import React, { createContext, useContext, useState, ReactNode,  useCallback } from 'react';
+import type { LifecycleStatus } from '@coinbase/onchainkit/transaction';
 
 // Step 1: Define the types for the context
 interface AppContextInterface {
@@ -11,6 +12,7 @@ interface AppContextInterface {
     handleSubmit: any;
     submittedData: FormData | null;
     setSubmittedData: (submittedData: FormData | null) => void;
+    handleOnStatus: any
 }
 
 // Step 2: Create the context with default values
@@ -42,8 +44,13 @@ const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
         setShowModal(false);
     };
 
+    const handleOnStatus = useCallback((status: LifecycleStatus) => {
+        console.log('LifecycleStatus', status);
+        return status.statusData
+    }, []);
+
     return (
-        <AppContext.Provider value={{ name, setName, showModal, setShowModal, formData, setFormData, handleSubmit, submittedData, setSubmittedData  }}>
+        <AppContext.Provider value={{ name, setName, showModal, setShowModal, formData, setFormData, handleSubmit, submittedData, setSubmittedData, handleOnStatus  }}>
             {children}
         </AppContext.Provider>
     );

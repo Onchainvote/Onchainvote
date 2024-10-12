@@ -3,10 +3,13 @@ import VoteComp from '../votecomp/VoteComp'
 import { useNavigate } from "react-router-dom";
 import { useAccount } from 'wagmi'
 import { presidential, governoship, houseReps } from '../../data';
+import { useAppContext } from '../../../AppProvider';
+import TransactionComp from '../transactcomp/TransactionComp';
 
 function Explore() {
 
   const navigate = useNavigate()
+  const {handleOnStatus} = useAppContext()
   const account = useAccount()
   useEffect(() => {
     if (account.address == null) {
@@ -28,6 +31,7 @@ function Explore() {
               presidential.map(candidate => (
                 <div>
                   <VoteComp key={candidate.id} name={candidate.name} img={candidate.img} party={candidate.party} />
+                  <TransactionComp />
                 </div>
               ))
             }
@@ -39,8 +43,8 @@ function Explore() {
             Governnorship Election
           </h1>
           <div className='flex justify-evenly align-center flex-wrap mt-5 md:gap-5'>
-            
-          {
+
+            {
               governoship.map(candidate => (
                 <div>
                   <VoteComp key={candidate.id} name={candidate.name} img={candidate.img} party={candidate.party} />
@@ -56,8 +60,8 @@ function Explore() {
             House of Reps Election
           </h1>
           <div className='flex justify-evenly align-center flex-wrap mt-5 md:gap-5'>
-            
-          {
+
+            {
               houseReps.map(candidate => (
                 <div>
                   <VoteComp key={candidate.id} name={candidate.name} img={candidate.img} party={candidate.party} />
