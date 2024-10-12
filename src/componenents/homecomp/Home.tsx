@@ -47,6 +47,7 @@ function Home() {
 
   return (
     <div className="">
+     
       {/* hero section */}
       <div className="relative flex flex-col items-center justify-center w-full min-h-screen px-3 overflow-hidden bg-background mt-20">
         <div className="text-center">
@@ -113,6 +114,7 @@ function Home() {
       </div>
 
       {/* ongoing election */}
+     
       <div className="container p-4 mx-auto my-16 ">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-bold">Ongoing Election</h2>
@@ -122,6 +124,7 @@ function Home() {
         </div>
 
         {/* Event List (limited to 3) */}
+        
         <h3 className="font-bold text-xl">Presidential Election</h3>
         <div className='flex justify-evenly flex-wrap mt-5 md:gap-5'>
           <VoteCandi name={presidential[0].name} img={presidential[0].img} party={presidential[0].party} votes={presidential[0].vote}/>
@@ -130,6 +133,7 @@ function Home() {
           <VoteCandi name={presidential[3].name} img={presidential[3].img} party={presidential[3].party} votes={presidential[3].vote}/>
         </div> 
       </div>
+     
     </div>
   );
 }
