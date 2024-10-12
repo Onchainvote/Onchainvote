@@ -41,9 +41,10 @@ export default function Results() {
   
   return (
     <div>
-        <div className='flex justify-evenly align-center w-full bg-blue-200 p-5 text-left text-sm mt-5'>
-            <ul>
-             {/* <li>{account.address} voted for </li>*/}
+      <h1>Live Voting Data</h1>
+        <div className='flex justify-evenly align-center w-full bg-blue-400 p-5 text-left text-sm mt-5 rounded-xl'>
+            <ul className='text-xl'>
+             <li>{account.address} voted </li>
               <li>{elem}</li>
             </ul>
           </div> 

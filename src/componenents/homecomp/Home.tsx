@@ -38,7 +38,9 @@ function Home() {
     }
   }
 
-  
+  // const generateID = (address: any) => {
+  //   return
+  // }
 
 
   return (

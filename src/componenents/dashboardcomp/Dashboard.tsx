@@ -1,22 +1,13 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react'
+import React, { useState, ChangeEvent } from 'react'
 import { useAccount } from 'wagmi'
 import EventTransact from '../transactcomp/EventTransact';
+import { Avatar } from '@coinbase/onchainkit/identity';
+import { useAppContext } from '../../../AppProvider';
 
-interface FormData {
-    name: string;
-    email: string;
-    message: string;
-}
 
 function Dashboard() {
 
-    const [showModal, setShowModal] = useState<boolean>(false);
-    const [formData, setFormData] = useState<FormData>({
-        name: "",
-        email: "",
-        message: "",
-    });
-    const [submittedData, setSubmittedData] = useState<FormData | null>(null);
+    const {formData, setFormData, showModal, setShowModal, handleSubmit, submittedData} = useAppContext();
 
     // Handle input changes with proper typing
     const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -26,54 +17,95 @@ function Dashboard() {
             [name]: value,
         });
     };
-
-    // Handle form submission
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setSubmittedData(formData);
-        setShowModal(false);
-    };
+    
 
     const account = useAccount()
 
     return (
         <>
             <div>
-                <img src="" alt="wallet image" />
-                <p>Address</p>
+                {
+                    account.status === 'connected' ? (
+                        <div className='flex justify-center items-center flex-col shadow-2xl rounded-md p-4 mt-10'>
+                            <Avatar className='h-24 w-24' address={account.address} />
+                            <p className='text-lg font-bold'>
+                                {account.address}
+                            </p>
+                            <p className='font-bold'>{account.status}</p>
+                        </div>
+                    ) : null
+                }
 
                 <button onClick={() => setShowModal(true)} className=' absolute bottom-20 right-5'>
                     create an event
                 </button>
 
                 {showModal && (
-                    <div className="modal">
-                        <div className="modal-content">
+                    <div className="flex fixed z-[1] left-0 top-0 justify-center items-center w-full h-full bg-[rgba(0,0,0,0.5)]">
+                        <div className="bg-white p-8 rounded-md w-96 mt-28">
                             <span className="close" onClick={() => setShowModal(false)}>
                                 &times;
                             </span>
-                            <form onSubmit={handleSubmit}>
+                            <div>
                                 <div>
-                                    <label>Name:</label>
+                                    <label className='text-xl font-bold'>Name of event</label>
                                     <input
+                                        className='p-2 mt-2 mb-2 mr-2 border rounded-xl border-blue-500 outline-none text-center'
                                         type="text"
                                         name="name"
                                         value={formData.name}
                                         onChange={handleInputChange}
-                                        required
+                                        placeholder='Title of event'
+                                    />
+                                </div>
+                                <p className='mt-4 text-lg font-bold'>Heroes Section</p>
+                                <div>
+                                    <label>Cadidate 1</label>
+                                    <input
+                                        type="text"
+                                        name="name1"
+                                        value={formData.name1}
+                                        onChange={handleInputChange}
+                                        placeholder='Name of candidate'
+                                        className='p-2 mt-2 mb-2 mr-2 border rounded-xl border-blue-500 outline-none text-center'
                                     />
                                 </div>
                                 <div>
-                                    <label>Email:</label>
+                                    <label>Cadidate</label>
                                     <input
-                                        type="email"
-                                        name="email"
-                                        value={formData.email}
+                                        type="text"
+                                        name="name2"
+                                        value={formData.name2}
+                                        onChange={handleInputChange}
+                                        placeholder='Name of candidate'
+                                        className='p-2 mt-2 mb-2 mr-2 border rounded-xl border-blue-500 outline-none text-center'
+                                    />
+                                </div>
+                                <div>
+                                    <label>Cadidate 3</label>
+                                    <input
+                                        type="text"
+                                        name="name3"
+                                        value={formData.name3}
                                         onChange={handleInputChange}
                                         required
+                                        placeholder='Name of candidate'
+                                        className='p-2 mt-2 mb-2 mr-2 border rounded-xl border-blue-500 outline-none text-center'
                                     />
                                 </div>
                                 <div>
+                                    <label>Cadidate 4</label>
+                                    <input
+                                        type="text"
+                                        name="name4"
+                                        value={formData.name4}
+                                        onChange={handleInputChange}
+                                        required
+                                        placeholder='Name of candidate'
+                                        className='p-2 mt-2 mb-2 mr-2 border rounded-xl border-blue-500 outline-none text-center'
+                                    />
+                                </div>
+                                {/* <div>
                                     <label>Message:</label>
                                     <textarea
                                         name="message"
@@ -81,45 +113,27 @@ function Dashboard() {
                                         onChange={handleInputChange}
                                         required
                                     />
-                                </div>
+                                </div> */}
                                 <EventTransact />
-                            </form>
+                            </div>
                         </div>
                     </div>
                 )}
 
                 {/* Display the submitted data */}
                 {submittedData && (
-                    <div>
-                        <h3>Submitted Data</h3>
-                        <p>Name: {submittedData.name}</p>
-                        <p>Email: {submittedData.email}</p>
-                        <p>Message: {submittedData.message}</p>
+                    <div className='flex justify-center items-center flex-col shadow-2xl rounded-md p-4 mt-20'>
+                        <h3>Event Information</h3>
+                        <p className='text-xl'>Event: {submittedData.name}</p>
+                        <p>Candidate 1: {submittedData.name1}</p>
+                        <p>Candidate 2: {submittedData.name2}</p>
+                        <p>Candidate 3: {submittedData.name3}</p>
+                        <p>Candidate 4: {submittedData.name4}</p>
                     </div>
                 )}
 
                 {/* Styling for the modal */}
                 <style>{`
-        .modal {
-          display: flex;
-          position: fixed;
-          z-index: 1;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.5);
-          justify-content: center;
-          align-items: center;
-        }
-
-        .modal-content {
-          background-color: white;
-          padding: 20px;
-          border-radius: 5px;
-          width: 400px;
-        }
-
         .close {
           cursor: pointer;
           float: right;

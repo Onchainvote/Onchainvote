@@ -13,6 +13,7 @@ import { WagmiProvider, createConfig, http } from 'wagmi';
 import { baseSepolia } from 'wagmi/chains';
 import { coinbaseWallet } from 'wagmi/connectors';
 import '@coinbase/onchainkit/styles.css';
+import AppProvider from '../AppProvider'
 
 const wagmiConfig = createConfig({
   chains: [baseSepolia],
@@ -31,20 +32,22 @@ function App({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <WagmiProvider config={wagmiConfig}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Navbar />}>
-              <Route index element={<Home />} />
-              <Route path="explore" element={<Explore />} />
-              <Route path="results" element={<Results />} />
-              <Route path="dashboard" element={<Dashboard />} />
-              <Route path="about" element={<About />} />
-              <Route path="*" element={<NoPage />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </WagmiProvider>
+      <AppProvider>
+        <WagmiProvider config={wagmiConfig}>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Navbar />}>
+                <Route index element={<Home />} />
+                <Route path="explore" element={<Explore />} />
+                <Route path="results" element={<Results />} />
+                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="about" element={<About />} />
+                <Route path="*" element={<NoPage />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </WagmiProvider>
+      </AppProvider>
     </>
   )
 }
