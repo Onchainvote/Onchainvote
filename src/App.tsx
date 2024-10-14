@@ -19,7 +19,6 @@ import ScrollToTop from "./componenents/ScrollToTop/ScrollToTop";
 function App() {
 
   return (
-    
       <MainLayout>
         <ScrollToTop />
           <Routes>
@@ -29,12 +28,9 @@ function App() {
               <Route path="results" element={<Results />} />
               <Route path="about" element={<About />} />
               <Route path="*" element={<NoPage />} />
-              
             
         </Routes>
-        
-      </MainLayout>
-        
+      </MainLayout>    
         
       
     

@@ -1,20 +1,20 @@
 //import React from 'react'
-import { useAccount } from 'wagmi'
 //import name from '../votecomp/VoteComp'
 import abi from '../../abi/abi.json';
 import ca from '../../abi/ca';
 import Web3 from 'web3';
 import { useEffect, useState } from 'react';
 export default function Results() {
-  const account = useAccount();
   const [elem, setElem] = useState(null);
   const web3= new Web3("https://sepolia.base.org");
   const fetchUserVote= async ()=>{
-    const contract= await new web3.eth.Contract(abi, ca);
+    const contract= await new web3.eth.Contract(abi, ca[0]);
     try{
       await contract.methods.showAddressVoteFunc().call().then(
         (res)=>{
+          //@ts-ignore
             const returnElem = res.map(
+              //@ts-ignore
               (data)=>(
                 <div>{data} voted</div>
               )

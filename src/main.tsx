@@ -10,7 +10,7 @@ import wagmiConfig from './config/wagmiConfig.ts';
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/vote-dapp'>
     <WagmiProvider config={wagmiConfig}>
     <OnchainProviders>
     <App />

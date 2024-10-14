@@ -6,7 +6,6 @@ import { useAccount } from 'wagmi'
 import { presidential, governoship, houseReps} from '../../data';
 
 
-
 function Explore() {
 
   const navigate = useNavigate()
