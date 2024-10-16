@@ -1,5 +1,3 @@
-import TransactionComp from '../transactcomp/TransactionComp';
-
 
 function VoteComp({ name, img, party }: { name: string, img: string ,party: string }) {
 

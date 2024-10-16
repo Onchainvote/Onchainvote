@@ -1,15 +1,18 @@
 import { useEffect } from 'react'
 import VoteComp from '../votecomp/VoteComp'
 import { useNavigate } from "react-router-dom";
-import { useAccount } from 'wagmi'
+import { useAccount, useWriteContract } from 'wagmi'
 import { presidential, governoship, houseReps } from '../../data';
 import { useAppContext } from '../../../AppProvider';
 import TransactionComp from '../transactcomp/TransactionComp';
+import abi from '../../abi/abi.json'
+import ca from '../../abi/ca'
 
 function Explore() {
 
+  const { writeContract } = useWriteContract()
+
   const navigate = useNavigate()
-  const {handleOnStatus} = useAppContext()
   const account = useAccount()
   useEffect(() => {
     if (account.address == null) {
@@ -31,7 +34,13 @@ function Explore() {
               presidential.map(candidate => (
                 <div>
                   <VoteComp key={candidate.id} name={candidate.name} img={candidate.img} party={candidate.party} />
-                  <TransactionComp />
+                  {/* <TransactionComp /> */}
+                  <button onClick={()=> writeContract({
+                    abi,
+                    address: ca[0],
+                    functionName: 'addVote',
+                    args: [candidate.id]
+                  })}>Vote</button>
                 </div>
               ))
             }
@@ -48,6 +57,12 @@ function Explore() {
               governoship.map(candidate => (
                 <div>
                   <VoteComp key={candidate.id} name={candidate.name} img={candidate.img} party={candidate.party} />
+                  <button onClick={()=> writeContract({
+                    abi,
+                    address: ca[1],
+                    functionName: 'addVote',
+                    args: [candidate.id]
+                  })}>Vote</button>
                 </div>
               ))
             }
@@ -65,6 +80,12 @@ function Explore() {
               houseReps.map(candidate => (
                 <div>
                   <VoteComp key={candidate.id} name={candidate.name} img={candidate.img} party={candidate.party} />
+                  <button onClick={()=> writeContract({
+                    abi,
+                    address: ca[2],
+                    functionName: 'addVote',
+                    args: [candidate.id]
+                  })}>Vote</button>
                 </div>
               ))
             }

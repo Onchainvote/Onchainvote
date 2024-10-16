@@ -6,7 +6,8 @@ function NoPage() {
     <>
       <div style={
         {
-          fontSize: "10rem"
+          fontSize: "10rem",
+          marginTop: "10rem"
         }
       }>404 Not found</div>
       <p>Back to <Link style={

@@ -16,28 +16,28 @@ import yakubu from "./assets/contestants/Yakubu.jpg";
 
 export const presidential = [
     {
-        id: 1,
+        id: 'a',
         name: "Peter Obi",
         party: "LP",
         img:  obi,
         vote: 23
     },
     {
-        id: 2,
+        id: 'b',
         name: "Bola Tinubu",
         party: "APC",
         img: bola,
         vote: 43
     },
     {
-        id: 3,
+        id: 'c',
         name: "Muhammad Buhari",
         party: "APC",
         img: buhari,
         vote: 34
     },
     {
-        id: 4,
+        id: 'd',
         name: "Salbaba",
         party: "PDP",
         img: salbaba,
@@ -48,28 +48,28 @@ export const presidential = [
 
 export const governoship = [
     {
-        id: 1,
+        id: 'a',
         name: "Datti-Baba ",
         party: "LP",
         img:  datti
 
     },
     {
-        id: 2,
+        id: 'b',
         name: "Sanwo-Olu",
         party: "APC",
         img:  sanwo
 
     },
     {
-        id: 3,
+        id: 'c',
         name: "Sagamu",
         party: "PDP",
         img:  sagamu
 
     },
     {
-        id: 4,
+        id: 'd',
         name: "Bassey-Otu",
         party: "APC",
         img:  bassey
@@ -79,28 +79,28 @@ export const governoship = [
 
 export const houseReps = [
     {
-        id: 1,
+        id: 'a',
         name: "Tajudeen ",
         party: "APC",
         img:  tajudeen
 
     },
     {
-        id: 2,
+        id: 'b',
         name: "Femi",
         party: "PDP",
         img:  femi
 
     },
     {
-        id: 3,
+        id: 'c',
         name: "Tambuwal",
         party: "LP",
         img:  tambuwal
 
     },
     {
-        id: 4,
+        id: 'd',
         name: "Yakubu",
         party: "APC",
         img:  yakubu
