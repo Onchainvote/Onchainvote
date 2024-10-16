@@ -9,8 +9,15 @@ import { JSXElementConstructor, ReactElement, ReactNode, ReactPortal, useEffect,
 export default function Results() {
 
   const [elem, setElem] = useState(null);
+  const [result, setResult] = useState(null)
+
   const [elem1, setElem1] = useState(null);
+  const [result1, setResult1] = useState(null)
+
+
   const [elem2, setElem2] = useState(null);
+  const [result2, setResult2] = useState(null)
+
 
   const web3 = new Web3("https://sepolia.base.org");
 
@@ -57,7 +64,7 @@ export default function Results() {
   }
 
   const fetchHorVote = async () => {
-    const contract = await new web3.eth.Contract(abi, ca[2]);
+    const contract = await new web3.eth.Contract(abi, ca[3]);
     try {
       await contract.methods.showAddressVoteFunc().call().then(
         (res) => {

@@ -82,7 +82,7 @@ function Explore() {
                   <VoteComp key={candidate.id} name={candidate.name} img={candidate.img} party={candidate.party} />
                   <button onClick={()=> writeContract({
                     abi,
-                    address: ca[2],
+                    address: ca[3],
                     functionName: 'addVote',
                     args: [candidate.id]
                   })}>Vote</button>

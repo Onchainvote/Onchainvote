@@ -24,7 +24,7 @@ function VoteCandi({ name, img, party, votes }: { name: string, img: string ,par
                 <p className="mb-2 text-xl font-bold">{party}</p>
             </div>
             <div className="p-4 mb-2 text-xl font-bold">
-                    <h3>{votes} votes</h3>
+                    {/* <h3>{votes} votes</h3> */}
             </div>
 
             
