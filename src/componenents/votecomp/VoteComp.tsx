@@ -1,17 +1,12 @@
-import { useEffect } from 'react';
-import AOS from 'aos';
+
 import TransactionComp from '../transactcomp/TransactionComp';
 
 export default function VoteComp({ name, img, party }: { name: string, img: string ,party: string }) {
 
-   useEffect(() => {
-        AOS.init();
-   },[]);
+
     return (
         <div 
-        className="overflow-hidden border rounded-lg shadow-lg"
-        data-aos = "fade-up"
-        data-aos-duration = "3000">
+        className="overflow-hidden border rounded-lg shadow-lg">
             {/* Image Section */}
             <div className="relative">
                 <img src={img} 

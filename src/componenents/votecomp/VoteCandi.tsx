@@ -1,7 +1,5 @@
-import {useEffect} from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-//er
+
+
 export default function VoteCandi({
   name,
   img,
@@ -13,17 +11,11 @@ export default function VoteCandi({
   party: string;
   votes: number;
 }) {
-    useEffect(() => {
-      AOS.init();
-    }, [])
+    
   
   return (
     <div 
-    className="overflow-hidden border rounded-lg shadow-lg"
-    data-aos = "flip-left"
-    data-aos-easing="ease-out-cubic"
-    data-aos-duration = '2000'
-    data-aos-delay ='100'>
+    className="overflow-hidden border rounded-lg shadow-lg">
       {/* Image Section */}
       <div className="relative">
         <img
