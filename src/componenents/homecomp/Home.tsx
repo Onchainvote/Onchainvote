@@ -126,7 +126,8 @@ function Home() {
         {/* Event List (limited to 3) */}
         
         <h3 className="font-bold text-xl">Presidential Election</h3>
-        <div className='flex justify-evenly flex-wrap mt-5 md:gap-5'>
+        <div 
+        className='flex justify-evenly flex-wrap mt-5 md:gap-5'>
           <VoteCandi name={presidential[0].name} img={presidential[0].img} party={presidential[0].party} votes={presidential[0].vote}/>
           <VoteCandi name={presidential[1].name} img = {presidential[1].img} party={presidential[1].party} votes={presidential[1].vote}/>
           <VoteCandi name={presidential[2].name} img={presidential[2].img} party={presidential[2].party} votes={presidential[2].vote}/>

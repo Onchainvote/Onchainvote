@@ -1,17 +1,23 @@
+import { useEffect } from 'react';
+import AOS from 'aos';
 import TransactionComp from '../transactcomp/TransactionComp';
+
+
+
 
 
 function VoteComp({ name, img, party }: { name: string, img: string ,party: string }) {
 
-   
+   useEffect(() => {
+        AOS.init();
+   },[]);
     return (
-        // <div className=' flex flex-col justify-center items-center bg-blue-500 p-10 rounded-xl'>
-        //     <h2 className=' text-xl text-white'>{name}</h2>
-        //     <img src={img} alt={`image of ${name}`} className='w-44 mt-5 mb-5 rounded-lg' />
-        //     <TransactionComp />
-        // </div>
+       
 
-        <div className="overflow-hidden border rounded-lg shadow-lg">
+        <div 
+        className="overflow-hidden border rounded-lg shadow-lg"
+        data-aos = "fade-up"
+        data-aos-duration = "3000">
             {/* Image Section */}
             <div className="relative">
                 <img src={img} 
