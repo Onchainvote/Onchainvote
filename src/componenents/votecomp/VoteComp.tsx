@@ -3,17 +3,12 @@ import AOS from 'aos';
 import TransactionComp from '../transactcomp/TransactionComp';
 
 
-
-
-
 function VoteComp({ name, img, party }: { name: string, img: string ,party: string }) {
 
    useEffect(() => {
         AOS.init();
    },[]);
     return (
-       
-
         <div 
         className="overflow-hidden border rounded-lg shadow-lg"
         data-aos = "fade-up"
@@ -27,7 +22,6 @@ function VoteComp({ name, img, party }: { name: string, img: string ,party: stri
                 
             </div>
            
-
          {/* Candidate's Name */}
             <div className='p-4'>
                  <h2 className="mb-2 text-xl font-bold">{name}</h2>
@@ -40,11 +34,17 @@ function VoteComp({ name, img, party }: { name: string, img: string ,party: stri
         
             </div>
 
-
-
-            
         </div>
     )
 }
 
 export default VoteComp
+
+
+            
+
+
+
+       
+
+
