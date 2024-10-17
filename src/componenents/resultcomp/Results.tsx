@@ -64,7 +64,7 @@ export default function Results() {
   }
 
   const fetchHorVote = async () => {
-    const contract = await new web3.eth.Contract(abi, ca[3]);
+    const contract = await new web3.eth.Contract(abi, ca[4]);
     try {
       await contract.methods.showAddressVoteFunc().call().then(
         (res) => {
