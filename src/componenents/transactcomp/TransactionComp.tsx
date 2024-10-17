@@ -1,4 +1,8 @@
+import type { LifecycleStatus } from '@coinbase/onchainkit/transaction';
+import { useNavigate } from "react-router-dom";
 import { useCallback, useState } from 'react';
+import { contracts } from './contracts';
+import { useAccount } from 'wagmi';
 import {
     Transaction,
     TransactionButton,
@@ -7,10 +11,6 @@ import {
     TransactionStatusAction,
     TransactionStatusLabel,
 } from '@coinbase/onchainkit/transaction';
-import type { LifecycleStatus } from '@coinbase/onchainkit/transaction';
-import { useAccount } from 'wagmi'
-import { contracts } from './contracts'
-import { useNavigate } from "react-router-dom";
 
 function TransactionComp() {
 

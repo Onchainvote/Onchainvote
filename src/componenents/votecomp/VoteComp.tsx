@@ -2,11 +2,7 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import TransactionComp from '../transactcomp/TransactionComp';
 
-
-
-
-
-function VoteComp({ name, img, party }: { name: string, img: string ,party: string }) {
+export default function VoteComp({ name, img, party }: { name: string, img: string ,party: string }) {
 
    useEffect(() => {
         AOS.init();
@@ -39,12 +35,6 @@ function VoteComp({ name, img, party }: { name: string, img: string ,party: stri
           
         
             </div>
-
-
-
-            
         </div>
-    )
+)
 }
-
-export default VoteComp
