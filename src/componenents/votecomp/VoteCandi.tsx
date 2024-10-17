@@ -1,4 +1,4 @@
-function VoteCandi({
+export default function VoteCandi({
   name,
   img,
   party,
@@ -19,7 +19,6 @@ function VoteCandi({
           className="object-cover w-full h-48 transition-transform duration-300 ease-in-out transform rounded-t-lg hover:scale-105"
         />
       </div>
-
       {/* Candidate's Name */}
       <div className="p-4">
         <h2 className="mb-2 text-xl font-bold">{name}</h2>
@@ -31,5 +30,3 @@ function VoteCandi({
     </div>
   );
 }
-
-export default VoteCandi;

@@ -1,32 +1,25 @@
-import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAccount } from "wagmi";
 import baselogo from "../../assets/baselogo.png";
-import RetroGrid from "../ui/retro-grid";
-
-import { presidential } from "../../data";
 import VoteCandi from "../votecomp/VoteCandi";
+import { presidential } from "../../data";
+import RetroGrid from "../ui/retro-grid";
+import { useAccount } from "wagmi";
+import { useState } from "react";
 
 interface MyObject {
   [key: string]: string;
 }
-
-function Home() {
-  // let id_address = new Map<string, string>();
-
+export default function Home() {
   const account = useAccount();
   const navigate = useNavigate();
   const [usrInp, setUsrInp] = useState<string>("");
   const [id_address, setId_Address] = useState<MyObject>({
     "1234567890": "0x23456789",
   });
-
   const handleUsrInp = (event: any) => {
     setUsrInp(event.target.value);
   };
-
-  const isDissabled =
-    usrInp.length < 10 && usrInp.length > 10 && account.address == undefined;
+  const isDissabled = usrInp.length !== 10 && account.status !== "connected" ;
 
   const handleAccreditate = () => {
     if (isDissabled) {
@@ -47,7 +40,6 @@ function Home() {
 
   return (
     <div className="">
-     
       {/* hero section */}
       <div className="relative flex flex-col items-center justify-center w-full min-h-screen px-3 overflow-hidden bg-background mt-20">
         <div className="text-center">
@@ -75,7 +67,7 @@ function Home() {
               value={usrInp}
             />
             <p className="text-sm">
-              ID will be mapped to your address: {account.address}
+              ID will be assigned to your address: {account.address}
             </p>
           </div>
           <button
@@ -137,5 +129,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;
