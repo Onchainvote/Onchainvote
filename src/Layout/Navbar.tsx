@@ -1,10 +1,10 @@
-import { Outlet, Link } from "react-router-dom";
 import WalletComponents from "../componenents/walletcomp/WalletComponents";
+import { Outlet, Link } from "react-router-dom";
 import devote from '../assets/devotelogo.png';
 import { useEffect, useState } from "react";
 import classNames from "classnames";
 
-function Navbar() {
+export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   //Detect scrolling for background change
@@ -50,10 +50,7 @@ function Navbar() {
               </li>
             </ul>
           </nav>
-    
           <Outlet />
         </>
     )
 }
-
-export default Navbar

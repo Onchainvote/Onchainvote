@@ -14,9 +14,8 @@ import {
   Identity,
   EthBalance,
 } from '@coinbase/onchainkit/identity';
-import { color } from '@coinbase/onchainkit/theme';
 
-function WalletComponents() {
+export default function WalletComponents() {
   return (
     <div
       className="flex">
@@ -50,4 +49,4 @@ function WalletComponents() {
   )
 }
 
-export default WalletComponents
+ WalletComponents
